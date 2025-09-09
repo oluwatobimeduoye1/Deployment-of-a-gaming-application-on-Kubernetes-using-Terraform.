@@ -10,5 +10,44 @@ This approach provides a robust and agile solution for deploying and managing mo
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/3d0bb6e5-98b3-4f89-9893-fb9dab1e3e1a" />
 
+# OVERVIEW
 
-<img width="709" height="765" alt="Screenshot 2025-09-09 at 18 17 19" src="https://github.com/user-attachments/assets/c3d3ba09-3d6e-48a7-8695-5f42c447b205" />
+### What is Terraform?
+Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It allows users to define and provision infrastructure in a declarative configuration language. With Terraform, you can manage and automate the deployment of infrastructure resources across various cloud providers, on-premises environments, and even third-party services.
+
+Key features of Terraform include:
+- Declarative Configuration: Infrastructure is defined in human-readable configuration files, specifying the desired state of the infrastructure.
+- Multi-Cloud Support: Terraform is cloud-agnostic and supports multiple cloud providers, including Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and others.
+- Resource Graph: Terraform builds a dependency graph of resources, enabling efficient provisioning and parallel execution of infrastructure changes.
+- State Management: Terraform tracks the current state of infrastructure, allowing it to plan and apply only the necessary changes to achieve the desired state
+
+### What is EKS?
+Amazon Elastic Kubernetes Service (EKS) is a managed Kubernetes service provided by Amazon Web Services (AWS). It simplifies the process of deploying, managing, and scaling Kubernetes clusters in the AWS cloud environment. With EKS, users can run containerized applications on Kubernetes without installing or operating the Kubernetes control plane themselves. 
+EKS integrates with other AWS services for security, networking, monitoring, and logging, offering a reliable and scalable platform for running Kubernetes workloads.
+
+### What is Docker?
+Docker is a platform and set of tools designed to make it easier to create, deploy, and run applications by using containers. 
+Containers allow developers to package up an application with all the parts it needs, such as libraries and dependencies, and ship it as one package. This ensures that the application will run in any environment.
+
+### What is KubeCTL?
+Kubectl is a command-line tool used to interact with Kubernetes clusters. It allows users to deploy and manage applications, inspect and manage cluster resources, view logs, and execute debugging commands within a Kubernetes environment. 
+Kubectl facilitates various operations such as creating, deleting, scaling, and updating Kubernetes resources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
