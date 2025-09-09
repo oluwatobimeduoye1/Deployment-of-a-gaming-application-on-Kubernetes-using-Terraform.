@@ -115,6 +115,89 @@ cd EKS-TF
 terraform init
 <img width="741" height="533" alt="Screenshot 2025-09-09 at 20 58 18" src="https://github.com/user-attachments/assets/82a80a2b-3aac-4134-b951-abe45c1a596c" />
 
+2. Validating the plan
+Once the terraform directory is initialized, we will create an execution plan and will validate if it is correct or if there are any errors in this.
+
+Validate the code.
+terraform validate
+
+<img width="730" height="231" alt="Screenshot 2025-09-09 at 21 05 04" src="https://github.com/user-attachments/assets/8d24561e-a9eb-4bd8-ac9e-d966025f900c" />
+
+3. Run the terraform plan to validate the code and check if it’s valid or not. It will show all the changes that are going to take place when we will execute this plan
+terraform plan
+
+
+<img width="1470" height="802" alt="Screenshot 2025-09-09 at 21 08 49" src="https://github.com/user-attachments/assets/cd1be670-f92f-4d2a-8b77-a7556650b49f" /><img width="1470" height="800" alt="Screenshot 2025-09-09 at 21 09 17" src="https://github.com/user-attachments/assets/597b15bb-392f-4566-b2d9-384322b9c57b" /><img width="1470" height="801" alt="Screenshot 2025-09-09 at 21 09 37" src="https://github.com/user-attachments/assets/2f69d04a-3fe3-40f4-bb57-78ab049f0039" /><img width="1470" height="781" alt="Screenshot 2025-09-09 at 21 09 58" src="https://github.com/user-attachments/assets/7c1a1f93-ca13-4194-86fd-c27c512be80c" /><img width="1470" height="319" alt="Screenshot 2025-09-09 at 21 10 25" src="https://github.com/user-attachments/assets/7a466dcb-b337-4484-9137-5023b214fbe3" />
+
+
+4. Execute the plan
+Once the execution plan is validated, we can now apply or execute the plan to create a resource group.
+Run terraform apply to execute the code. Type yes when prompted or you can use "terraform apply --auto-approve" and it will approve automatically.
+"terraform apply -auto-approve"
+
+<img width="1470" height="772" alt="Screenshot 2025-09-09 at 21 17 20" src="https://github.com/user-attachments/assets/22c23e91-2994-427d-a507-b7579122785f" />
+
+<img width="1470" height="493" alt="Screenshot 2025-09-09 at 21 27 15" src="https://github.com/user-attachments/assets/7ab331dd-ceff-4367-b7d3-207d080bce6a" />
+<img width="900" height="410" alt="Screenshot 2025-09-09 at 21 29 11" src="https://github.com/user-attachments/assets/ae94ed94-23c9-4f89-b0ed-e7a04d229cfa" />
+
+# Creation of Deployment and Service for EKS
+1.  cd ..
+2.  Create the deployment.
+kubectl apply -f deployment.yaml
+deployment.yaml file is like a set of instructions that tells a computer system, "Hey, here's how you should run and manage a particular application ". It provides the necessary information for a computer system to deploy and manage a specific software application. It includes details like what the application is, how many copies of it should run, and other settings that help the system understand how to keep the application up and running smoothly.
+3. Now create the service.
+kubectl apply -f service.yaml
+
+4. Run the command `kubectl get all` in your terminal or command prompt. This command retrieves information about all resources of type "all" in your Kubernetes cluster, including pods, services, deployments, and more.
+kubectl get all
+
+<img width="1470" height="391" alt="Screenshot 2025-09-09 at 21 42 12" src="https://github.com/user-attachments/assets/fe6a6750-d284-4a6c-bbe5-42c6179d1d16" />
+
+5. Now Run the following command to get the load balancer ingress.
+This command tells all the details of your application
+kubectl describe service mario-service
+<img width="1470" height="809" alt="Screenshot 2025-09-09 at 21 44 30" src="https://github.com/user-attachments/assets/9638de6e-a5e1-4e6c-8544-9ed2864f854d" />
+
+
+
+
+# Summary of Project Documentation: "Deployment of a Gaming Application on Kubernetes using Terraform"
+
+This documentation outlines a robust method for deploying a gaming application, specifically Super Mario, onto an Amazon Elastic Kubernetes Service (EKS) cluster. The project leverages Terraform for defining and provisioning the entire underlying AWS infrastructure, including the EKS cluster, networking components, and storage. Once the infrastructure is established, Kubernetes takes over to manage the game application's deployment, scaling, and orchestration, ensuring high availability and performance. The documentation provides a detailed, step-by-step guide on setting up the necessary tools (Docker, Terraform, AWS CLI, Kubectl) on an EC2 instance, configuring an IAM role for secure AWS access, creating an S3 bucket, and then proceeding with the Terraform and Kubernetes deployment commands. It emphasizes the benefits of this approach, such as automated infrastructure, scalability, resilience, and operational efficiency.
+# Real-Time Use Case
+
+Imagine a rapidly growing indie game studio launching a new multiplayer online game. They anticipate fluctuating player counts, with significant spikes during promotional events or new content releases.
+
+   - Initial Launch: Using this project's methodology, the studio can quickly provision their entire game infrastructure on EKS with a few terraform apply commands. This eliminates manual setup and ensures consistency.
+
+   - Scaling During Peak Hours: When a new update attracts thousands of players, Kubernetes automatically scales the game's pods to handle the increased load. This prevents server crashes and maintains a smooth gaming experience without manual intervention from the studio's operations team.
+
+   - Global Expansion: As the game gains popularity worldwide, the studio can easily replicate this entire infrastructure in different AWS regions using Terraform. This provides low-latency access for players globally.
+
+   - Patching and Updates: New game patches can be deployed seamlessly using Kubernetes' rolling updates, ensuring zero downtime for players. The declarative nature of the deployment.yaml and service.yaml files makes updates consistent and predictable.
+
+ - Cost Optimization: Kubernetes can be configured to scale down resources during off-peak hours, optimizing cloud spending without sacrificing performance when demand is high.
+
+This approach allows the gaming studio to focus on game development rather than infrastructure management, providing a highly scalable and resilient platform for their application.
+
+# Benefits
+
+   - Automated and Repeatable Infrastructure Provisioning: Terraform codifies the entire infrastructure, making deployments consistent, repeatable, and less prone to human error. This is crucial for disaster recovery and setting up new environments.
+
+   - Enhanced Scalability and Resilience: Kubernetes automatically manages the scaling of game instances based on demand, ensuring the game remains responsive and available even under heavy load. Its self-healing capabilities improve application resilience.
+
+   - Operational Efficiency: The combination of IaC with Terraform and container orchestration with Kubernetes significantly streamlines deployment pipelines, reduces manual operational tasks, and accelerates the release cycle for game updates and patches.
+
+   - Cloud Agnostic (Terraform) and Vendor Neutral (Kubernetes): While this project uses EKS, Terraform supports multiple cloud providers, offering flexibility for future migration or multi-cloud strategies. Kubernetes itself is an open-source standard, preventing vendor lock-in at the application layer.
+
+   - Version Control and Collaboration: Infrastructure and application configurations are stored as code in Git, enabling version control, collaboration among teams, and a clear audit trail of all changes.
+
+   - Cost Optimization: Dynamic scaling capabilities of Kubernetes, combined with Terraform's ability to precisely define resources, help in optimizing cloud resource utilization and reducing unnecessary expenditures.
+
+   - Simplified Management of Complex Systems: Breaking down the game into containerized microservices managed by Kubernetes simplifies the complexity of running a large-scale distributed application.
+
+   - Faster Iteration and Development Cycles: Developers can quickly deploy and test new features or fixes in environments that closely mirror production, leading to faster development and iteration cycles.
+
 
 
 
