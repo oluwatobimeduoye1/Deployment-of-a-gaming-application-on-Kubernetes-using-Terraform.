@@ -34,12 +34,27 @@ Kubectl is a command-line tool used to interact with Kubernetes clusters. It all
 Kubectl facilitates various operations such as creating, deleting, scaling, and updating Kubernetes resources.
 
 
+# Launch & Configure EC2 Instance
+we begin by creating an EC2 instance and configuring it so we can install Terraform and Docker in our next step.
+1. Launch an Ubuntu server
+2. Connect to Ubuntu server
+3. Run the following commands 
+“sudo su” to provide root user permission.
+“apt update -y” to update the package lists for upgrades and new packages in Ubuntu EC2 Instance
 
+# Set up Docker, Terraform, AWS CLI & Kubectl
+## Setup Docker
+1. Install Docker by executing the following command:
+   " apt install docker.io "
+   <img width="720" height="421" alt="Screenshot 2025-09-09 at 19 32 53" src="https://github.com/user-attachments/assets/798c765a-4f3d-4b49-9148-d738c978b362" />
+2. Add your user to the Docker group using the command:
+   "usermod -aG docker $USER"
+3. After adding your user to the Docker group, activate the changes by running the command:
+  " newgrp docker "
+4. run the command " which docker ", it checks the location of the Docker executable in your system's PATH.
 
-
-
-
-
+ <img width="724" height="272" alt="Screenshot 2025-09-09 at 19 40 52" src="https://github.com/user-attachments/assets/3dbff677-22dd-4209-8c35-3d8de9f7efbc" />
+Docker successfully Installed!!!!
 
 
 
