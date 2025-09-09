@@ -1,0 +1,1 @@
+# Deployment-of-a-gaming-application-on-Kubernetes-using-Terraform.
