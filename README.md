@@ -8,4 +8,7 @@ Key benefits include:
 
 This approach provides a robust and agile solution for deploying and managing modern gaming applications at scale
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/3d0bb6e5-98b3-4f89-9893-fb9dab1e3e1a" />
+
+
 <img width="709" height="765" alt="Screenshot 2025-09-09 at 18 17 19" src="https://github.com/user-attachments/assets/c3d3ba09-3d6e-48a7-8695-5f42c447b205" />
